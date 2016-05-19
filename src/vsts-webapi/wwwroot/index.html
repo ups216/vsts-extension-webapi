@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <script src="scripts/VSS.SDK.js"></script>
+    <script src="scripts/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        // Initialize the VSS sdk
+        VSS.init({
+            usePlatformScripts: true,
+            moduleLoaderConfig: {
+                paths: {
+                    "Scripts": "scripts"
+                }
+            }
+        });
+
+        // Wait for the SDK to be initialized
+        VSS.ready(function () {
+            require(["Scripts/app"], function (app) { });
+            VSS.notifyLoadSucceeded();
+        });
+    </script>
+    <script>
+        function callapi()
+        {
+            alert("try");
+            $.getJSON('api/values', function (result) {
+                $.each(result, function (i, field) {
+                    alert(field);
+                });
+            });
+
+        }
+
+        function callapi1()
+        {
+            var jqxhr = $.ajax({
+                url: 'api/values'
+            })
+                .then(function (data) {
+                    $.each(data, function (i, field) {
+                        alert(field);
+                    });
+                })
+                .done(function () {
+                    alert("success!");
+                })
+                .fail(function () {
+                    alert("failed!");
+                })
+                .always * function () {
+                    alert("completed!");
+                }
+        }
+    </script>
+
+    <h1>TypeScript HTML App with web api</h1>
+
+    <button class="btn btn-danger" id="content"></button>
+    <button class="btn btn-danger" onclick="greeter.start()">start</button>
+    <button class="btn btn-danger" onclick="greeter.stop()">stop</button>
+
+    <button class="btn btn-default" id="callapi" onclick="callapi();">Call api</button>
+
+    <button class="btn btn-default" id="callapi1" onclick="callapi1();">Call api 1</button>
+
+    <p id="result"></p>
+</body>
+</html>

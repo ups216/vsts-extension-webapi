@@ -1,0 +1,11 @@
+﻿{
+  "serviceUrl": "https://almnetworks.visualstudio.com",
+  "package": {
+    "manifestGlobs": [ "vss-extension.json" ]
+  },
+  "publish": {
+    "galleryUrl": "https://marketplace.visualstudio.com/",
+    "token": "hp42a5tn6don4mlhzkumv4sgqi7pw4xzpuf6s6avhxncnfcsin2q",
+    "shareWith": "almnetworks.visualstudio.com"
+  }
+}

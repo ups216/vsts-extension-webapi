@@ -1,0 +1,81 @@
+{
+  "manifestVersion": 1,
+  "id": "sample-extension-webapi",
+  "version": "0.1.0",
+  "name": "sample-extension-webapi",
+  "scopes": [ "vso.work", "vso.work_write" ],
+  "description": "Testing asp.net webapi with vsts extension.",
+  "baseUri": "https://localhost:44355/",
+  "publisher": "lean-soft",
+  "public": false,
+  "icons": {
+    "default": "img/logo.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": [
+    "Sample"
+  ],
+  "links": {
+    "home": {
+      "uri": "http://devopshub.cn"
+    },
+    "getstarted": {
+      "uri": "http://devopshub.cn"
+    },
+    "learn": {
+      "uri": "http://devopshub.cn"
+    },
+    "support": {
+      "uri": "http://devopshub.cn"
+    },
+    "repository": {
+      "uri": "http://devopshub.cn"
+    },
+    "issues": {
+      "uri": "http://devopshub.cn"
+    }
+  },
+  "branding": {
+    "color": "rgb(220, 235, 252)",
+    "theme": "light"
+  },
+  "files": [
+    {
+      "path": "css",
+      "addressable": true
+    },
+    {
+      "path": "img",
+      "addressable": true
+    },
+    {
+      "path": "scripts",
+      "addressable": true
+    },
+    {
+      "path": "index.html",
+      "addressable": true
+    }
+  ],
+  "categories": [
+    "Integrate"
+  ],
+  "contributions": [
+    {
+      "id": "home",
+      "targets": [
+        "ms.vss-work-web.work-hub-group"
+      ],
+      "type": "ms.vss-web.hub",
+      "properties": {
+        "name": "Web API sample",
+        "order": 100,
+        "uri": "index.html"
+      }
+    }
+  ]
+}
